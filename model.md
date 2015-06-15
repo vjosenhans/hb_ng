@@ -14,16 +14,16 @@ Folge: Wir verfolgen CERIF erstmal nur in der Form weiter, dass wir die Entität
 | //name[@type="personal" and not(@authority)] | foaf:Person | |
 | //name[@type="personal" and not(@authority)]/namePart[@type="family"] | foaf:Person | foaf:familyName |
 | //name[@type="personal" and not(@authority)]/namePart[@type="given"] | foaf:Person | foaf:givenName |
-| //name[@type="personal" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfPers | cerif:cfPersID |
-| //name[@type="personal" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfPers | owl:sameAs |
-| //name[@type="personal" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/namePart[@type="family"] | cerif:cfPersName | cerif:cfFamilyNames (*) |
-| //name[@type="personal" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/namePart[@type="given"] | cerif:cfPersName | cerif:cfFirstNames (*) |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfPers | cerif:cfPersID |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfPers | owl:sameAs |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/namePart[@type="family"] | cerif:cfPersName | cerif:cfFamilyNames (*) |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/namePart[@type="given"] | cerif:cfPersName | cerif:cfFirstNames (*) |
 | //name[@type="personal"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication lavel | |
 | //name[@type="corporate" and not(@authority)] | foaf:Organization | |
 | //name[@type="corporate" and not(@authority)]/namePart | foaf:Organization | foaf:name |
-| //name[@type="corporate" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfOrgUnitName | cerif:cfOrgUnitID |
-| //name[@type="corporate" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfOrgUnitName | owl:sameAs |
-| //name[@type="corporate" and starts-with(@valueURI="http://d-nb.info/gnd/") and @authority="gnd"]/namePart | cerif:cfOrgUnitName | cerif:cfName (*) |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfOrgUnitName | cerif:cfOrgUnitID |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | cerif:cfOrgUnitName | owl:sameAs |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/namePart | cerif:cfOrgUnitName | cerif:cfName (*) |
 | //name[@type="corporate"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication lavel | |
 
 # Properties and Classes for Bibliographic Description
@@ -84,7 +84,36 @@ registerNamespace('xlink', 'http://www.w3.org/1999/xlink')
 | //mods/genre[@authority="marcgt"] | cfRes{Publ,Pat,Prod} | dcterms:type |
 | //mods/typeOfResource | | |
 | //mods/identifier[@type="isbn"] | | |
+| //mods/identifier[@type="issn"] | | |
+| //mods/relatedItem/identifier[@type="isbn"] | | |
+| //mods/relatedItem/identifier[@type="issn"] | | |
+| //mods/identifier[@type="doi"] | | |
+| //mods/identifier[@type="pm"] | | |
+| //mods/identifier[@type="isi"] | | |
 | //mods/tableOfContents[@xlink:href] | | |
+| //mods/accessCondition[@type="use and reproduction"] | | |
+| //mods/accessCondition[@type="restriction on access"] | | |
+| //mods/note | | |
+| //mods/note[@type="publication status"] | | |
+| //mods/note[@displayLabel="Preis"] | | |
+| //mods/note[@displayLabel="Titelzusätze"] | | |
+| //mods/subject[@authority="mesh"]/topic | | |
+| //mods/subject[@authority="thesoz"]/topic | | |
+| //mods/subject[@authority="stw"]/topic | | |
+| //mods/subject[@authority="lcsh"]/topic | | |
+| //mods/language/languageTerm | | |
+| //mods/location/physicalLocation | | |
+| //mods/location/shelfLocator | | |
+| //mods/location/url | | |
+| //mods/physicalDescription/extent | | |
+| //mods/physicalDescription/internetMediaType | | |
+| //mods/abstract[@sharable="no"] | | |
+| //mods/abstract | | |
+| //mods/recordInfo/recordCreationDate | | |
+| //mods/recordInfo/recordChangeDate | | |
+| //mods/extension/dcterms:bibliographicCitation | | |
+| //mods/genre[@authority="dct" and @valueURI="http://purl.org/dc/dcmitype/Text"] | | |
+| //mods/genre[starts-with(@valueURI, "http://purl.org/info:eu-repo/semantics/")] | | |
 
 Properties and Classes for Administrative Data
 ==============================================
