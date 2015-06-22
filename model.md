@@ -114,14 +114,13 @@ For each profile we describe a mapping from current resources.
 
 ## Publications 
 
-[The CERIF XML Publication Entity in the OpenAIRE context](https://guidelines.openaire.eu/wiki/OpenAIRE_Guidelines:_For_CRIS#The_CERIF_XML_Publication_Entity_in_the_OpenAIRE_context):  
+[The CERIF XML Publication Entity in the OpenAIRE context](https://guidelines.openaire.eu/wiki/OpenAIRE_Guidelines:_For_CRIS#The_CERIF_XML_Publication_Entity_in_the_OpenAIRE_context):
 Book, Book Review, Book Chapter Abstract, Book Chapter Review, Inbook, Anthology, Monograph, Referencebook, Textbook, Encyclopedia, Manual, Otherbook, Journal, Journal Issue, Journal Article, Journal Article Abstract, Journal Article Review, Conference Proceedings, Conference Proceedings Article, Conference Abstract, Conference Poster, Letter, Letter to Editor, PhD Thesis, Doctoral Thesis, Supervised Student Publications, Report, Short Communication, Poster, Presentation, Newsclipping, Commentary, Annotation, Transliteration, Translation, Authored Book, Edited Book, Chapter in Book, Scholarly Edition, Conference Contribution, Working Paper, Research Report for external body, Confidential Report (for external body), Encyclopedia Entry, Magazine Article, Dictionary Entry, Online Resource, Standard and Policy 
 
 
 **independent publication**
 
-depends on `//mods/genre`:  
-{TODO list of relevant values}
+depends on `//mods/genre`: {TODO list of relevant values}
 
 * use static FRBRoo model: 
 	* `efrbroo:F1_Work`, `rdac:Work`  
@@ -131,6 +130,7 @@ depends on `//mods/genre`:
 	* `efrbroo:F3_Manifestation_Product_Type`, `rdac:Manifestation`
 	* `efrbroo:R7_has_example (is_example_of)`, `rdam:exemplarOfManifestation (rdai:manifestationExemplified)`
 	* `efrbroo:F5_Item`, `rdac:Item`
+* roles for contributors in RDA: ["has contributor" and its subproperties](http://www.rdaregistry.info/Elements/e/#P20053)
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile |
 | ------ | ------ | ------ | ------ | ------ |
@@ -167,8 +167,10 @@ depends on `//mods/genre`:
 | //mods/identifier[@type="pm"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
 | //mods/identifier[@type="isi"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
 | //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI **AND** //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/role/roleTerm = "edt" | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:editor.en | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | ap-internal |
 | //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | | | ap-internal |
-| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression [NEW-ID] | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
 | //mods/tableOfContents | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
 | //mods/tableOfContents[@xlink:href] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:uniformResourceLocator | rdfs:Literal | ap-internal |
 | //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI **AND** //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/role/roleTerm = "aut" | efrbroo:F1_Work, rdac:Work | rdaw:hasAuthor | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | ap-internal |
@@ -196,14 +198,15 @@ Example: [hb_ng_publication_example.ttl](https://gist.github.com/hagbeck/5b8fbe5
 
 **non-independent publication**
 
-depends on `//mods/genre`:  
-{TODO list of relevant values}
+depends on `//mods/genre`: {TODO list of relevant values}
 
-* use static FRBRoo: 
+* use static FRBRoo model: 
 	* `efrbroo:F1_Work`, `rdac:Work` 
 	* `efrbroo:R3_is_realised_in (realises)`, `rdaw:expressionOfWork (rdae:workExpressed)`
 	* `efrbroo:F22_Self-Contained_Expression`, `rdac:Expression`
-		* `efrbroo:R15_has_fragment (is_fragment_of)`
+		* `efrbroo:F1_Work`, `rdac:Work` 
+		* `efrbroo:R3_is_realised_in (realises)`, `rdaw:expressionOfWork (rdae:workExpressed)`
+		* `efrbroo:R15_has_fragment (is_fragment_of)`, `rdae:containerOfExpression (rdae:containedInExpression)`
 		* `efrbroo:F23_Expression_Fragment`, `rdac:Expression`
 		* (`efrbroo:R4_carriers_provided_by (comprises_carriers_of)`, `rdae:manifestationOfExpression (rdae:manifestationOfExpression)`)* 
 		* (`efrbroo:F3_Manifestation_Product_Type`, `rdac:Manifestation`)* 
@@ -213,33 +216,37 @@ depends on `//mods/genre`:
 	* `efrbroo:F3_Manifestation_Product_Type`, `rdac:Manifestation`
 	* `efrbroo:R7_has_example (is_example_of)`, `rdam:exemplarOfManifestation (rdai:manifestationExemplified)`
 	* `efrbroo:F5_Item`, `rdac:Item`
+* roles for contributors in RDA: ["has contributor" and its subproperties](http://www.rdaregistry.info/Elements/e/#P20053)
 
 \* if the Expression Fragement is realised in an independent publication using its own persistent identifier
 
-| Source | Target Entities | Target Property | Target Value Type |
-| ------ | ------ | ------ | ------ |
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile |
 | ------ | ------ | ------ | ------ | ------ |
+| //mods/relatedItem[@type="host"] | efrbroo:F1_Work, rdac:Work | | | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:workExpressed | efrbroo:F1_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R3_realises | efrbroo:F1_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
 | //mods | efrbroo:F1_Work, rdac:Work | | | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | * |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:workExpressed | efrbroo:F1_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R3_realises | efrbroo:F1_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment | | |
-| //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
-| //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | | | * |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 
 
 
 ## Patent 
 
-depends on `//mods/genre`:  
-{TODO list of relevant values}
+depends on `//mods/genre`: {TODO list of relevant values}
 
 | Source | Target Entity | Target Property | Target Value Type |
 | ------ | ------ | ------ | ------ |
@@ -249,11 +256,10 @@ depends on `//mods/genre`:
 
 ## Product
 
-[The CERIF XML Product Entity in the OpenAIRE context](https://guidelines.openaire.eu/wiki/OpenAIRE_Guidelines:_For_CRIS#The_CERIF_XML_Product_Entity_in_the_OpenAIRE_context):  
+[The CERIF XML Product Entity in the OpenAIRE context](https://guidelines.openaire.eu/wiki/OpenAIRE_Guidelines:_For_CRIS#The_CERIF_XML_Product_Entity_in_the_OpenAIRE_context):
 Collection, Dataset, Event, Film, Image, InteractiveResource, Model, PhysicalObject, Service, Software, Sound, Text
 
-depends on `//mods/genre`:  
-{TODO list of relevant values}
+depends on `//mods/genre`: {TODO list of relevant values}
 
 | Source | Target Entity | Target Property | Target Value Type |
 | ------ | ------ | ------ | ------ |
