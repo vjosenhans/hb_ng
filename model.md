@@ -39,13 +39,6 @@ For each profile we describe a mapping from current resources.
 
 `dcterms:type` links to a controlled vocabulary (e.g. a skos:ConceptScheme); registerNamespace('xlink', 'http://www.w3.org/1999/xlink')
 
-
-> Bemerkung:
-> **Die CERIF-Ontologie 1.3 ist in ihrer derzeitgen Form unbrauchbar!** Das Problem ist, dass sämtliche Eigenschaften als "Classes" und keinerlei "Properties" modelliert sind (bspw. wird der Name einer Person so zu einer Klasse anstatt zu einer Eigenschaft einer Entität.). 
-
-> **Folge:** Wir verfolgen CERIF erstmal nur in der Form weiter, dass wir die Entitäten der Kernontologie verwenden, diese aber mittels "Ontology Allignments" und Relationen zu anderen Entitäten beschreiben.
-
-
 # Properties and Classes for Authority Data
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile |
