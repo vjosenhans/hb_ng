@@ -21,6 +21,7 @@ The following ontologies are used:
 	@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 	@prefix schema:   <http://schema.org/> .
 	@prefix powder:   <http://www.w3.org/2007/05/powder-s#> .
+	@prefix prov:     <http://www.w3.org/ns/prov#> .
 	# cidoc crm universe
 	@prefix ecrm:     <http://erlangen-crm.org/120111/> .
 	@prefix efrbroo:  <http://erlangen-crm.org/efrbroo/121016/> .
@@ -43,16 +44,16 @@ For each profile we describe a mapping from current resources.
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile |
 | ------ | ------ | ------ | ------ | ------ |
-| //name[@type="personal" and not(@authority)] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | rdf:about | rdfs:Literal (1) | * |
-| //name[@type="personal" and not(@authority)]/namePart[@type="family"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | foaf:familyName | rdfs:Literal | ap-simple |
-| //name[@type="personal" and not(@authority)]/namePart[@type="given"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | foaf:givenName | rdfs:Literal | ap-simple |
-| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | powder:describedby | gnd:Person | * |
-| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | cerif:cfPersID | rdfs:Literal | ap-cerif |
+| //name[@type="personal" and not(@authority)] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | rdf:about | rdfs:Literal (1) | * |
+| //name[@type="personal" and not(@authority)]/namePart[@type="family"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | foaf:familyName | rdfs:Literal | ap-simple |
+| //name[@type="personal" and not(@authority)]/namePart[@type="given"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | foaf:givenName | rdfs:Literal | ap-simple |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | powder:describedby | gnd:Person | * |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | cerif:cfPersID | rdfs:Literal | ap-cerif |
 | //name[@type="personal"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication level | | | |
-| //name[@type="corporate" and not(@authority)] | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body | rdf:about | rdfs:Literal (2) | * |
-| //name[@type="corporate" and not(@authority)]/namePart | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body | foaf:name | rdfs:Literal | ap-simple |
-| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body | powder:describedby | gnd:Organisation | * |
-| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI |foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body | cerif:cfOrgUnitID | rdfs:Literal | ap-cerif |
+| //name[@type="corporate" and not(@authority)] | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | rdf:about | rdfs:Literal (2) | * |
+| //name[@type="corporate" and not(@authority)]/namePart | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | foaf:name | rdfs:Literal | ap-simple |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | powder:describedby | gnd:Organisation | * |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI |foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | cerif:cfOrgUnitID | rdfs:Literal | ap-cerif |
 | //name[@type="corporate"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication level | | | |
 
 (1) if exists(//name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI) then create an URI based on an UUID for the entity in first migration.  
@@ -185,9 +186,19 @@ depends on `//mods/genre`: {TODO list of relevant values}
 | //mods/identifier[@type="doi"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:identifierForTheManifestation | rdfs:Literal | ap-internal |
 | //mods/identifier[@type="pm"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:identifierForTheManifestation | rdfs:Literal | ap-internal |
 | //mods/identifier[@type="isi"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:identifierForTheManifestation | rdfs:Literal | ap-internal |
+| //mods/originInfo/publisher | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:publisher | gnd:Organisation | ap-internal |
+| //mods/originInfo/publisher | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:publishersName | rdfs:Literal | ap-internal |
+| //mods/originInfo/dateIssued | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:dateOfPublication | rdfs:Literal | ap-internal |
+| //mods/originInfo/place/placeTerm[@type='text'] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:placeOfPublication | rdfs:Literal | ap-internal |
+| //mods/originInfo/physicalDescription/extent | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:extent | rdfs:Literal | ap-internal |
 | //mods/relatedItem | depends on type attribute and on contained current()/genre | | | |
 
-Example: [hb_ng_publication_example.ttl](https://gist.github.com/hagbeck/5b8fbe5377589202af7d) on GitHubGist
+Examples on GitHubGist: 
+* Elliptische Differentialgleichungen zweiter Ordnung / Wienholtz, Ernst; Kalf, Hubert; Kriecherbauer, Thomas ([Dataset in Ruhr-Universität Bochum, Research Bibliography & Repository](https://bibliographie.ub.rub.de/export/xml/mods?q=id%3Ac8ab7d97-47a6-4647-acc6-f5f0fe05a5fe)): 
+	* [book description in terms of the application profile 'ap-internal-public'](https://gist.github.com/hagbeck/bb08ae55556bbda1314c) 
+	* [book description in terms of the application profile 'ap-internal-nonpublic'](https://gist.github.com/hagbeck/8f108a8889cb12a2dedb) 
+
+
 
 **non-independent publication**
 
@@ -216,24 +227,30 @@ depends on `//mods/genre`: {TODO list of relevant values}
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile |
 | ------ | ------ | ------ | ------ | ------ |
-| //mods/relatedItem[@type="host"] | efrbroo:F1_Work, rdac:Work | | | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | | | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:workExpressed | efrbroo:F1_Work, rdac:Work | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R3_realises | efrbroo:F1_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:workExpressed | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R3_realises | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | | | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | | | * |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods | efrbroo:F14_Individual_Work, rdac:Work | | | ap-internal |
+| //mods | efrbroo:F14_Individual_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods | efrbroo:F14_Individual_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | | | * |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | rdae:workExpressed | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | efrbroo:R3_realises | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+
+Examples on GitHubGist: 
+* Uniform asymptotics for polynomials orthogonal with respect to a general class of discrete weights and universality results for associated ensembles / Baik, Jinho; Kriecherbauer, Thomas; McLaughlin, Kenneth T-R; Miller, Peter David ([Dataset in Ruhr-Universität Bochum, Research Bibliography & Repository](https://bibliographie.ub.rub.de/export/xml/mods?q=id%3Ae0007d60-6426-4273-bfca-561b87ca8036)): 
+	* [journal article description in terms of the application profile 'ap-internal-public'](https://gist.github.com/hagbeck/b6e7058ca257c0d2fbb7) 
 
 
 
@@ -267,15 +284,15 @@ For each created resource description we additionally create a resource to descr
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile |
 | ------ | ------ | ------ | ------ | ------ |
-| //mods | powder:Document, ecrm:E31_Document | | | * | 
-| //mods | powder:Document, ecrm:E31_Document | powder:describedby | rdfs:Literal | * | 
-| //mods | powder:Document, ecrm:E31_Document | cc:licence | rdfs:Literal | * | 
-| //mods | powder:Document, ecrm:E31_Document | cc:attributionURL | rdfs:Literal | * | 
-| //mods | powder:Document, ecrm:E31_Document | cc:attributionName| rdfs:Literal | * | 
-| //mods/recordInfo/recordCreationDate | powder:Document, ecrm:E31_Document | dcterms:created | rdfs:Literal | * | 
-| //mods/recordInfo/recordChangeDate | powder:Document, ecrm:E31_Document | dcterms:modified | rdfs:Literal | * | 
-| //mods | powder:Document, ecrm:E31_Document | dcterms:hasVersion | skos:Concept | * | 
-| //mods | powder:Document, ecrm:E31_Document | dcterms:accessRights | skos:Concept | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | | | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | powder:describedby | rdfs:Literal | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:licence | rdfs:Literal | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:attributionURL | rdfs:Literal | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:attributionName| rdfs:Literal | * | 
+| //mods/recordInfo/recordCreationDate | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:created | rdfs:Literal | * | 
+| //mods/recordInfo/recordChangeDate | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:modified | rdfs:Literal | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:hasVersion | skos:Concept | * | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:accessRights | skos:Concept | * | 
 
 Example:
 
@@ -287,6 +304,8 @@ Example:
 	>
 		<rdf:Description rdf:about="http://data.uaruhr.de/resource/1/about">
 			<rdf:type rdf:resource="http://www.w3.org/2007/05/powder-s#Document" />
+			<rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity" />
+			<rdf:type rdf:resource="http://erlangen-crm.org/120111/E31_Document" />
 			<powder:describedby rdf:resource="http://data.uaruhr.de/resource/1/about-meta" />
 			<cc:licence rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/legalcode" />
 			<cc:attributionURL rdf:resource="http://www.uaruhr.de/bibliotheken_en.php" />
