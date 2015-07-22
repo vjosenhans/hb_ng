@@ -42,67 +42,70 @@ For each profile we describe a mapping from current resources.
 
 # Properties and Classes for Authority Data
 
-| Source | Target Entities | Target Property | Target Value Type | Application Profile |
-| ------ | ------ | ------ | ------ | ------ |
-| //name[@type="personal" and not(@authority)] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | rdf:about | rdfs:Literal (1) | * |
-| //name[@type="personal" and not(@authority)]/namePart[@type="family"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | foaf:familyName | rdfs:Literal | ap-simple |
-| //name[@type="personal" and not(@authority)]/namePart[@type="given"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | foaf:givenName | rdfs:Literal | ap-simple |
-| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | powder:describedby | gnd:Person | * |
-| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | cerif:cfPersID | rdfs:Literal | ap-cerif |
-| //name[@type="personal"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication level | | | |
-| //name[@type="corporate" and not(@authority)] | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | rdf:about | rdfs:Literal (2) | * |
-| //name[@type="corporate" and not(@authority)]/namePart | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | foaf:name | rdfs:Literal | ap-simple |
-| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | powder:describedby | gnd:Organisation | * |
-| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI |foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | cerif:cfOrgUnitID | rdfs:Literal | ap-cerif |
-| //name[@type="corporate"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication level | | | |
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| //name[@type="personal" and not(@authority)] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | rdf:about | rdfs:Literal [1] | * | 1 | 1 | | person |
+| //name[@type="personal" and not(@authority)]/namePart[@type="family"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | foaf:familyName | rdfs:Literal | ap-simple | [2] | | | |
+| //name[@type="personal" and not(@authority)]/namePart[@type="given"] | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | foaf:givenName | rdfs:Literal | ap-simple | | | | |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | powder:describedby | gnd:Person | * | 1 | 1 | ua_member [3] | person |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person, prov:Person | cerif:cfPersID | rdfs:Literal | ap-cerif | 1 | 1 | ua_member | person |
+| //name[@type="personal"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication level | | | | 1 | 0 | role | role |
+| //name[@type="corporate" and not(@authority)] | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | rdf:about | rdfs:Literal [4] | * | 1 | 1 | institution | institution |
+| //name[@type="corporate" and not(@authority)]/namePart | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | foaf:name | rdfs:Literal | ap-simple | 1 | 1 | institution | institution |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | powder:describedby | gnd:Organisation | * | 1 | 1 | f_ua_unit [5] | ua_unit |
+| //name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI |foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | cerif:cfOrgUnitID | rdfs:Literal | ap-cerif | 1 | 1 | f_ua_unit | ua_unit |
+| //name[@type="corporate"]/role/roleTerm[@type="code" and @authorityURI="http://www.loc.gov/marc/relators/"] | must be defined at the publication level | | | | 1 | 0 | role | role |
 
-(1) if exists(//name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI) then create an URI based on an UUID for the entity in first migration.  
-(2) if exists(//name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI) then create an URI based on an UUID for the entity in first migration.
+[1]: if exists(//name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI) then create an URI based on an UUID for the entity in first migration.
+[2]: For indexing family and given names have to be combined and stored in both the normal and the inverted form.
+[3]: As we don't have affiliation data in the MODS we need to make sure that persons with GND identifiers in fact are university members.
+[4]: if exists(//name[@type="corporate" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI) then create an URI based on an UUID for the entity in first migration.
+[5]: We can be pretty certain that organizations with GND identifiers in the MODS data are university units.
 
 # Properties and Classes for Bibliographic Description
 
 
 ## List of source paths to map from the current system 
 
-| Source | Target Entity | Target Property |
-| ------ | ------ | ------ |
-| //mods/typeOfResource | | |
-| //mods/identifier[@type="isbn"] | | |
-| //mods/identifier[@type="issn"] | | |
-| //mods/relatedItem/identifier[@type="isbn"] | | |
-| //mods/relatedItem/identifier[@type="issn"] | | |
-| //mods/identifier[@type="doi"] | | |
-| //mods/identifier[@type="pm"] | | |
-| //mods/identifier[@type="isi"] | | |
-| //mods/tableOfContents[@xlink:href] | | |
-| //mods/accessCondition[@type="use and reproduction"] | | |
-| //mods/accessCondition[@type="restriction on access"] | | |
-| //mods/note | | |
-| //mods/note[@type="publication status"] | | |
-| //mods/note[@displayLabel="Preis"] | | |
-| //mods/note[@displayLabel="Titelzusätze"] | | |
-| //mods/subject[@authority="mesh"]/topic | | |
-| //mods/subject[@authority="thesoz"]/topic | | |
-| //mods/subject[@authority="stw"]/topic | | |
-| //mods/subject[@authority="lcsh"]/topic | | |
-| //mods/language/languageTerm | | |
-| //mods/location/physicalLocation | | |
-| //mods/location/shelfLocator | | |
-| //mods/location/url | | |
-| //mods/physicalDescription/extent | | |
-| //mods/physicalDescription/internetMediaType | | |
-| //mods/abstract[@sharable="no"] | | |
-| //mods/abstract | | |
-| //mods/recordInfo/recordCreationDate | | |
-| //mods/recordInfo/recordChangeDate | | |
-| //mods/extension/dcterms:bibliographicCitation | | |
-| //mods/genre[@authority="dct" and @valueURI="http://purl.org/dc/dcmitype/Text"] | | |
-| //mods/genre[starts-with(@valueURI, "http://purl.org/info:eu-repo/semantics/")] | | |
-| //mods/genre[@authority="dct" starts-with(@valueURI="http://purl.org/dc/dcmitype/")] |  | dcterms:type | skos:Concept |
-| //mods/genre[not(@authority) and starts-with(@valueURI="http://purl.org/info:eu-repo/semantics/")] | | dcterms:type | skos:Concept |
-| //mods/genre[@authority="local"] | | dcterms:type | skos:Concept |
-| //mods/genre[@authority="marcgt"] | | dcterms:type | skos:Concept |
-| //mods/relatedItem[@type="..."] | | ... | rdfs:Resource (depends on @type and/or //mods/relatedItem/genre) |
+| Source | Target Entity | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| //mods/typeOfResource | | | | | 1 | 1 | type | type |
+| //mods/identifier[@type="isbn"] | | | | | 1 | 1 | | isbn |
+| //mods/identifier[@type="issn"] | | | | | 1 | 1 | | issn |
+| //mods/relatedItem/identifier[@type="isbn"] | | | | | 1 | 1 | | isbn |
+| //mods/relatedItem/identifier[@type="issn"] | | | | | 1 | 1 | | issn |
+| //mods/identifier[@type="doi"] | | | | | 1 | 1 | | doi |
+| //mods/identifier[@type="pm"] | | | | | 1 | 1 | | pmid |
+| //mods/identifier[@type="isi"] | | | | | 1 | 1 | | wos_id |
+| //mods/tableOfContents[@xlink:href] | | | | | 0 | 1 | | |
+| //mods/accessCondition[@type="use and reproduction"] | | | | | 0 | 1 | | |
+| //mods/accessCondition[@type="restriction on access"] | | | | | 0 | 1 | | |
+| //mods/note | | | | | 1 | 1 | | note |
+| //mods/note[@type="publication status"] | | | | | 0 | 1 | | |
+| //mods/note[@displayLabel="Preis"] | | | | | 0 | 0 | | |
+| //mods/note[@displayLabel="Titelzusätze"] | | | | | 1 | 1 | | remainder |
+| //mods/subject[@authority="mesh"]/topic | | | | | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="thesoz"]/topic | | | | | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="stw"]/topic | | | | | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="lcsh"]/topic | | | | | 1 | 1 | fsubject | subject |
+| //mods/language/languageTerm | | | | | 1 | 1 | lang | lang |
+| //mods/location/physicalLocation | | | | | | | | |
+| //mods/location/shelfLocator | | | | | 1 | 1 | | locator |
+| //mods/location/url | | | | | 0 | 1 | | |
+| //mods/physicalDescription/extent | | | | | 0 | 1 | | |
+| //mods/physicalDescription/internetMediaType | | | | | 0 | 1 | | |
+| //mods/abstract[@sharable="no"] | | | | | 1 | 0 | | abstract |
+| //mods/abstract | | | | | 1 | 1 | | abstract |
+| //mods/recordInfo/recordCreationDate | | | | | 0 | 0 | | |
+| //mods/recordInfo/recordChangeDate | | | | | 0 | 0 | | |
+| //mods/extension/dcterms:bibliographicCitation | | | | | 0 | 1 | | |
+| //mods/genre[@authority="dct" and @valueURI="http://purl.org/dc/dcmitype/Text"] | | | | | | | | |
+| //mods/genre[starts-with(@valueURI, "http://purl.org/info:eu-repo/semantics/")] | | | | | | | | |
+| //mods/genre[@authority="dct" starts-with(@valueURI="http://purl.org/dc/dcmitype/")] |  | dcterms:type | skos:Concept | | | | | |
+| //mods/genre[not(@authority) and starts-with(@valueURI="http://purl.org/info:eu-repo/semantics/")] | | dcterms:type | skos:Concept | | | | | |
+| //mods/genre[@authority="local"] | | dcterms:type | skos:Concept | | | | | |
+| //mods/genre[@authority="marcgt"] | | dcterms:type | skos:Concept | | | | | |
+| //mods/relatedItem[@type="..."] | | ... | rdfs:Resource (depends on @type and/or //mods/relatedItem/genre) | | | | | |
 
 
 
@@ -126,8 +129,8 @@ depends on `//mods/genre`: {TODO list of relevant values}
 	* `efrbroo:F5_Item`, `rdac:Item`
 * roles for contributors in RDA: ["has contributor" and its subproperties](http://www.rdaregistry.info/Elements/e/#P20053)
 
-| Source | Target Entities | Target Property | Target Value Type | Application Profile |
-| ------ | ------ | ------ | ------ | ------ |
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | //mods | efrbroo:F1_Work, rdac:Work | | | ap-internal |
 | //mods | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
@@ -139,29 +142,29 @@ depends on `//mods/genre`: {TODO list of relevant values}
 | //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
 | //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/typeOfResource | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | |
-| concat(//mods/titleInfo/title, " : ", //mods/titleInfo/subTitle) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:title | rdfs:Literal | ap-simple |
-| concat(//mods/titleInfo/title[@type="abbreviated"], " : ", //mods/titleInfo/subTitle[@type="abbreviated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple |
-| concat(//mods/titleInfo/title[@type="translated"], " : ", //mods/titleInfo/subTitle[@type="translated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple |
-| concat(//mods/titleInfo/title[@type="uniform"], " : ", //mods/titleInfo/subTitle[@type="uniform"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple |
-| concat(//mods/titleInfo/title[@type="alternative"], " : ", //mods/titleInfo/subTitle[@type="alternative"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple |
-| concat(//mods/titleInfo/title[@type="enumerated"], " : ", //mods/titleInfo/subTitle[@type="enumerated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple |
-| //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:language | rdfs:Literal (ISO 639) | ap-simple |
+| //mods/typeOfResource | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | | 1 | 1 | type | type |
+| concat(//mods/titleInfo/title, " : ", //mods/titleInfo/subTitle) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:title | rdfs:Literal | ap-simple | 1 | 1 | | title |
+| concat(//mods/titleInfo/title[@type="abbreviated"], " : ", //mods/titleInfo/subTitle[@type="abbreviated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple | 1 | 1 | | abbr_title |
+| concat(//mods/titleInfo/title[@type="translated"], " : ", //mods/titleInfo/subTitle[@type="translated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple | 1 | 1 | | trans_title |
+| concat(//mods/titleInfo/title[@type="uniform"], " : ", //mods/titleInfo/subTitle[@type="uniform"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple | 1 | 1 | | uniform_title |
+| concat(//mods/titleInfo/title[@type="alternative"], " : ", //mods/titleInfo/subTitle[@type="alternative"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple | 1 | 0 | | alt_title
+| concat(//mods/titleInfo/title[@type="enumerated"], " : ", //mods/titleInfo/subTitle[@type="enumerated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dcterms:title | rdfs:Literal | ap-simple | 1 | 0 | | enum_title
+| //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:language | rdfs:Literal (ISO 639) | ap-simple | 1 | 1 | lang | lang |
 | //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:languageOfExpression | rdfs:Literal (ISO 639) | ap-internal |
-| //mods/abstract[@sharable="no"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:abstract | rdfs:Literal |ap-simple |
-| //mods/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:abstract | rdfs:Literal |ap-simple |
-| //mods/tableOfContents[@xlink:href] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:tableOfContents | rdfs:Literal | ap-simple |
-| //mods/subject[@authority="mesh"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple |
-| //mods/subject[@authority="thesoz"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple |
-| //mods/subject[@authority="stw"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple |
-| //mods/subject[@authority="lcsh"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple |
-| //mods/identifier[@type="isbn"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
-| //mods/identifier[@type="issn"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
-| //mods/identifier[@type="doi"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
-| //mods/identifier[@type="pm"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
-| //mods/identifier[@type="isi"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple |
-| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/abstract[@sharable="no"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:abstract | rdfs:Literal | ap-simple | 1 | 0 | | abstract |
+| //mods/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:abstract | rdfs:Literal |ap-simple | 1 | 1 | | abstract |
+| //mods/tableOfContents[@xlink:href] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:tableOfContents | rdfs:Literal | ap-simple | 0 | 0 | | |
+| //mods/subject[@authority="mesh"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="thesoz"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="stw"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="lcsh"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:subject | skos:Concept | ap-simple | 1 | 1 | fsubject | subject |
+| //mods/identifier[@type="isbn"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple | 1 | 1 | | isbn |
+| //mods/identifier[@type="issn"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple | 1 | 1 | | issn |
+| //mods/identifier[@type="doi"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple | 1 | 1 | | doi |
+| //mods/identifier[@type="pm"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple | 1 | 1 | | pmid |
+| //mods/identifier[@type="isi"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | dc:identifier | rdfs:Literal |ap-simple | 1 | 1 | | wos_id |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal | 1 | 1 | | toc |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal | 1 | 1 | | toc |
 | //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI **AND** //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/role/roleTerm = "edt" | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:editor.en | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | ap-internal |
 | //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | | | ap-internal |
 | //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
@@ -225,8 +228,8 @@ depends on `//mods/genre`: {TODO list of relevant values}
 \* if the Expression Fragement is realised in an independent publication using its own persistent identifier
 
 
-| Source | Target Entities | Target Property | Target Value Type | Application Profile |
-| ------ | ------ | ------ | ------ | ------ |
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | | | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
@@ -258,8 +261,8 @@ Examples on GitHubGist:
 
 depends on `//mods/genre`: {TODO list of relevant values}
 
-| Source | Target Entity | Target Property | Target Value Type |
-| ------ | ------ | ------ | ------ |
+| Source | Target Entity | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | //mods | cerif:cfResPat | | |
 
 
@@ -271,19 +274,19 @@ Collection, Dataset, Event, Film, Image, InteractiveResource, Model, PhysicalObj
 
 depends on `//mods/genre`: {TODO list of relevant values}
 
-| Source | Target Entity | Target Property | Target Value Type |
-| ------ | ------ | ------ | ------ |
+| Source | Target Entity | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | //mods | cerif:cfResProd | | |
 
 
 
 # Properties and Classes for Administrative Data
 
-For each created resource description we additionally create a resource to describe the description. In this we gather informations about the state, the provenance, access conditions and the licence for reuse of the data.
+For each created resource description we additionally create a resource to describe the description. In this we gather information about the state, the provenance, access conditions and the licence for reuse of the data.
 
 
-| Source | Target Entities | Target Property | Target Value Type | Application Profile |
-| ------ | ------ | ------ | ------ | ------ |
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | //mods | powder:Document, ecrm:E31_Document, prov:Entity | | | * | 
 | //mods | powder:Document, ecrm:E31_Document, prov:Entity | powder:describedby | rdfs:Literal | * | 
 | //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:licence | rdfs:Literal | * | 
@@ -317,3 +320,24 @@ Example:
 		</rdf:Description>
 	</rdf:RDF>
 
+# Properties and Classes for Person Profiles
+
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| UserProfile > pid | | | | | | | | |
+| UserProfile > image | | | | | | | | |
+| UserProfile > email | | | | | | | | |
+| URL > type | | | | | | | | |
+| URL > label | | | | | | | | |
+| Interest > label | | | | | | | | |
+| Award > start | | | | | | | | |
+| Award > end | | | | | | | | |
+| Award > label | | | | | | | | |
+| CV > start | | | | | | | | |
+| CV > end | | | | | | | | |
+| CV > label | | | | | | | | |
+| Project > start | | | | | | | | |
+| Project > end | | | | | | | | |
+| Project > label | | | | | | | | |
+| Membership > label | | | | | | | | |
+| Reviewer > label | | | | | | | | |
