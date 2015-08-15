@@ -19,7 +19,7 @@ Erarbeitung und Einsatz eines Datenmodells, in das sich die derzeit vorhandenen 
 * Es wurde ein Entitätennetz auf Basis von CERIF definiert (model.graphml).
 * Erste Entitäten wurden beschrieben. Dazu wurden *Application Profiles* definiert und geeignete Ontologien für die Beschreibung der Entitäten ausgewählt (siehe model.md).
 * *Application Profiles:*
-	* "simple" für einen schnellen Datenaustausch
+	* "vivo" für einen schnellen Datenaustausch
 	* "internal" für eine möglich umfassende Beschreibung der Entitäten
 	* "schema" für die Anreicherung der Webseiten der Hochschulbibliographie mit schema.org-Vokabular
 	* "cerif" für CERIF-kompatible Anwendungen
@@ -32,3 +32,9 @@ Erarbeitung und Einsatz eines Datenmodells, in das sich die derzeit vorhandenen 
 **Bemerkung:**
 * Die CERIF-Ontologie 1.3 ist in ihrer derzeitgen Form nahezu unbrauchbar! Das Problem ist, dass sämtliche Eigenschaften als "Classes" und keinerlei "Properties" modelliert sind (bspw. wird der Name einer Person so zu einer Klasse anstatt zu einer Eigenschaft einer Entität.). Folge: Wir verfolgen CERIF erstmal nur in der Form weiter, dass wir die Entitäten der Kernontologie verwenden, diese aber mittels "Ontology Allignments" und Relationen zu anderen Entitäten beschreiben.
 * Eine Äquivalenz von der GND-Entität Person zu Person-Entitäten anderer  hier verwendeter Ontologien ist nicht möglich, da die GND-Entität Person von einer Klasse "Authority Resource" abgeleitet ist. Somit ist auch Person in diesem Kontext eine "Authority Resource". Zu dieser Problematik folgt später eine ausführliche Beschreibung.
+
+## Implementing a Linked Data Platform 
+
+Für die Speicherung der entstehenden Linked Data wird eine Backend implementiert, welches eine Fassade für beliebige Triple Stores darstellt. Damit schaffen wir die nötige Flexibilität bei der Auswahl eines Triple Store ohne die Gesamtfunktionalität des Systems zu beeinträchtigen. Der Code für die Fassade liegt ebenfalls auf GitHub: [LinkedDataPlatform-HB-NG](https://github.com/hagbeck/LinkedDataPlatform-HB-NG)
+
+Aktuell wird [SolRDF](https://github.com/agazzarini/SolRDF) von Andrea Gazzarini als Triple Store verwendet.
