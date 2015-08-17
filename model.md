@@ -392,16 +392,16 @@ Example:
 | UserProfile > image | | | | | | | | |
 | UserProfile > email | | | | | | | | |
 | URL > type | | | | | | | | |
-| URL > label | | | | | | | | |
-| Interest > label | | | | | | | | |
+| URL > label | | | | | | 1 | | url |
+| Interest > label | | | | | 1 | 1 | | interest |
 | Award > start | | | | | | | | |
 | Award > end | | | | | | | | |
-| Award > label | | | | | | | | |
+| Award > label | | | | | 1 | 1 | | award |
 | CV > start | | | | | | | | |
 | CV > end | | | | | | | | |
-| CV > label | | | | | | | | |
+| CV > label | | | | | 1 | 1 | | cv |
 | Project > start | | | | | | | | |
 | Project > end | | | | | | | | |
-| Project > label | | | | | | | | |
-| Membership > label | | | | | | | | |
-| Reviewer > label | | | | | | | | |
+| Project > label | | | | | 1 | 1 | | project |
+| Membership > label | | | | | 1 | 1 | | member |
+| Reviewer > label | | | | | 1 | 1 | | reviewer |
