@@ -142,6 +142,8 @@ depends on `//mods/genre`: {TODO list of relevant values}
 | //mods/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | rdf:about | rdfs:Literal (URI) | * | | | | | 
 | //mods/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | schema:text | rdfs:Literal | * | 1 | 1 | | abstract |
 | //mods/abstract[@sharable="no"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | schema:text | rdfs:Literal | * | 1 | 0 | | abstract |
+| //mods/subject[not(exists(@authority))"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/subject[not(exists(@authority))/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
 | //mods/subject[@authority="mesh"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
 | //mods/subject[@authority="mesh"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
 | //mods/subject[@authority="thesoz"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
