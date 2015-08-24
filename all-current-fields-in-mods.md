@@ -46,7 +46,7 @@
 | modsCollection/mods/identifier[@type='zdb'] | | |
 | modsCollection/mods/language | | |
 | modsCollection/mods/language/languageTerm[@type='code' and @authority='iso639-2b'] | | |
-[16:50:41] André Hagenbruch: | modsCollection/mods/location | | |
+| modsCollection/mods/location | | |
 | modsCollection/mods/location/physicalLocation | | |
 | modsCollection/mods/location/shelfLocator | | |
 | modsCollection/mods/location/url[@displayLabel='Adresse im Internet'] | | |
