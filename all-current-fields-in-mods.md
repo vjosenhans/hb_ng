@@ -7,6 +7,7 @@
 | modsCollection/mods/abstract[@xmlns:xlink='http://www.w3.org/1999/xlink' and @xlink:href/@xlink:href] | | |
 | modsCollection/mods/accessCondition[@type='restriction on access'] | | |
 | modsCollection/mods/accessCondition[@type='use and reproduction'] | | |
+| modsCollection/mods/classification | | |
 | modsCollection/mods/classification[@authority='international patent classification'] | | |
 | modsCollection/mods/extension | | |
 | modsCollection/mods/extension/dcterms:bibliographicCitation | | |
