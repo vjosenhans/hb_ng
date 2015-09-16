@@ -116,7 +116,8 @@
                     "type": "object",
                     "properties": {
                       "name-identifier-type": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": ["gnd", "viaf", "orcid", "isni", "researcherid", "scopus-author-id"]
                       },
                       "name-identifier-id": {
                         "type": "string"
@@ -130,7 +131,16 @@
                     "type": "object",
                     "properties": {
                       "affiliation-id": {
-                        "type": "string"
+                        "type": "object",
+                        "properties": {
+                          "affiliation-id-type": {
+                            "type": "string",
+                            "enum": ["gnd", "viaf", "isni", "ringgold-id"]
+                          },
+                          "affiliation-id-code": {
+                            "type": "string"
+                          }
+                        }
                       },
                       "affiliation-label": {
                         "type": "string"
@@ -180,14 +190,25 @@
           "$ref": "name-variable"
         }
       },
+      "contributor": {
+        "type": "array",
+        "items": {
+          "$ref": "name-variable",
+          "description": "An unspecified person."
+        }
+      },
       "DDC": {
         "type": "string"
       },
       "destatis": {
         "type": "object",
         "properties": {
-          "destatis_id": "string",
-          "destatis_label": "string"
+          "destatis_id": {
+            "type": "string"
+          },
+          "destatis_label": {
+            "type": "string"
+          }
         }
       },
       "director": {
@@ -195,6 +216,10 @@
         "items": {
           "$ref": "name-variable"
         }
+      },
+      "DW-ID": {
+        "type": "string",
+        "description": "Internal datawarehouse ID"
       },
       "editor": {
         "type": "array",
@@ -321,6 +346,23 @@
       },
       "abstract": {
         "type": "string"
+      },
+      "abstract-detailed": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string"
+            },
+            "shareable": {
+              "type": "boolean"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        }
       },
       "annote": {
         "type": "string"
@@ -485,15 +527,52 @@
         "type": "string"
       },
       "subject": {
+        "id": "subject-variable",
         "type": "array",
         "items": {
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "authority": {
+              "type": "string"
+            }
+          }
         }
       },
-      "title": {
+      "subject-genre": {
+        "$ref": "subject-variable"
+      },
+      "subject-geographic": {
+        "$ref": "subject-variable"
+      },
+      "subject-name": {
+        "$ref": "subject-variable"
+      },
+      "subject-temporal": {
+        "$ref": "subject-variable"
+      },
+      "subject-topic": {
+        "$ref": "subject-variable"
+      },
+      "subtitle": {
         "type": "string"
       },
+      "title": {
+        "type": "string",
+        "description": "The composite field for the title and a subtitle"
+      },
       "title-short": {
+        "type": "string"
+      },
+      "title_without_subtitle": {
+        "type": "string"
+      },
+      "translated-title": {
         "type": "string"
       },
       "URL": {
