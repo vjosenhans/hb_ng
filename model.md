@@ -351,15 +351,22 @@ For each created resource description we additionally create a resource to descr
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | | | depends on entity (1) | 
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | powder:describedby | rdfs:Literal | depends on entity (1) | 
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:licence | rdfs:Literal | depends on entity (1) | 
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:attributionURL | rdfs:Literal | depends on entity (1) | 
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | cc:attributionName| rdfs:Literal | depends on entity (1) | 
-| //mods/recordInfo/recordCreationDate | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:created | rdfs:Literal | depends on entity (1) | 
-| //mods/recordInfo/recordChangeDate | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:modified | rdfs:Literal | depends on entity (1) | 
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:hasVersion | skos:Concept | depends on entity (1) | 
-| //mods | powder:Document, ecrm:E31_Document, prov:Entity | dcterms:accessRights | skos:Concept | depends on entity (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | | | * (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | powder:describedby | rdfs:Literal | * (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | cc:licence | rdfs:Literal | * (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | cc:attributionURL | rdfs:Literal | * (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | cc:attributionName| rdfs:Literal | * (1) | 
+| //mods/recordInfo/recordCreationDate | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | dcterms:created | rdfs:Literal | * (1) | 
+| //mods/recordInfo/recordChangeDate | powder:Document, ecrm:E31_Document, prov:Entit, schema:Datasety | dcterms:modified | rdfs:Literal | * (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | dcterms:hasVersion | skos:Concept | * (1) | 
+| //mods | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | dcterms:accessRights | skos:Concept | * (1) | 
+
+
+The datasets for these descriptions are organized in data catalogs for each contributing organization. Therefore we had to add a triple for connecting the dataset to the datacatalog. Using schema.org we only have one direction to describe the relation.
+
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| //mods | schema:DataCatalog | schema:dataset | powder:Document, ecrm:E31_Document, prov:Entity, schema:Dataset | * (1) | 
 
 (1) The administrative data must be added to the application profile which contains the entity it describes.
 
@@ -370,6 +377,7 @@ Example:
 		xmlns:powder="http://www.w3.org/2007/05/powder-s#"
 		xmlns:cc="http://creativecommons.org/ns#"
 		xmlns:dct="http://purl.org/dc/terms#" 
+		xmlns:schema="http://schema.org/"
 	>
 		<rdf:Description rdf:about="http://data.uaruhr.de/resource/1/about">
 			<rdf:type rdf:resource="http://www.w3.org/2007/05/powder-s#Document" />
@@ -383,6 +391,10 @@ Example:
 			<dcterms:modified>2015-06-19</modified>
 			<dcterms:hasVersion rdf:resource="http://data.uaruhr.de/resource/concept:notEdited" />	
 			<dct:accessRights rdf:resource="http://data.uaruhr.de/resource/concept:public" />
+		</rdf:Description>
+
+		<rdf:Description rdf:about="http://data.uaruhr.de/resource/collection:hb:tudo">
+			<schema:dataset rdf:resource="http://data.uaruhr.de/resource/1/about" />
 		</rdf:Description>
 	</rdf:RDF>
 
