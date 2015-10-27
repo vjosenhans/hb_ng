@@ -134,7 +134,7 @@ Book, Book Review, Book Chapter Abstract, Book Chapter Review, Inbook, Anthology
 
 depends on `//mods/genre`: {TODO list of relevant values}
 
-**general triples**
+**`general triples`**
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -212,26 +212,26 @@ depends on `//mods/genre`: {TODO list of relevant values}
 | Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | //mods | efrbroo:F1_Work, rdac:Work | rdf:about | rdfs:Literal (URI) | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:workExpressed | efrbroo:F1_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R3_realises | efrbroo:F1_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | ap-internal |
+| //mods | efrbroo:F1_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:workExpressed | efrbroo:F1_Work, rdac:Work | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R3_realises | efrbroo:F1_Work, rdac:Work | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
 | //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdf:about | rdfs:Literal (URI) | ap-internal |
 | //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 | //mods | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/typeOfResource | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | | 1 | 1 | type | type |
-| //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:languageOfExpression | rdfs:Literal (ISO 639) | ap-internal |
-| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal | | | | |
-| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal | | | | |
+| //mods/typeOfResource | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | | | | 1 | 1 | type | type |
+| //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:languageOfExpression | rdfs:Literal (ISO 639) | ap-internal |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:containerOfExpression | efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | ap-internal | | | | |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R15_has_fragment | efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | ap-internal | | | | |
 | //mods/tableOfContents | efrbroo:F1_Work, rdac:Work | rdf:about | rdfs:Literal (URI) | ap-internal |
 | //mods/tableOfContents | efrbroo:F1_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | ap-internal |
-| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/tableOfContents | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
 | //mods/tableOfContents | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdf:about | rdfs:Literal (URI) | ap-internal |
 | //mods/tableOfContents[@xlink:href] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:uniformResourceLocator | rdfs:Literal | ap-internal | 1 | 1 | | toc |
 | //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI **AND** //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/role/roleTerm = "aut" | efrbroo:F1_Work, rdac:Work | rdaw:hasAuthor | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | ap-internal |
-| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI **AND** //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/role/roleTerm = "edt" | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:editor.en | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | ap-internal |
+| //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/@valueURI **AND** //name[@type="personal" and starts-with(@valueURI, "http://d-nb.info/gnd/") and @authority="gnd"]/role/roleTerm = "edt" | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:editor.en | foaf:Person, cerif:cfPers, schema:Person, efrbroo:F10_Person, rdac:Person | ap-internal |
 | concat(//mods/titleInfo/title, " : ", //mods/titleInfo/subTitle) | efrbroo:F1_Work, rdac:Work | rdaw:preferredTitleForTheWork | rdfs:Literal | ap-internal |
 | concat(//mods/titleInfo/title[@type="abbreviated"], " : ", //mods/titleInfo/subTitle[@type="abbreviated"]) | efrbroo:F1_Work, rdac:Work | rdaw:titleOfTheWork | rdfs:Literal | ap-internal |
 | concat(//mods/titleInfo/title[@type="translated"], " : ", //mods/titleInfo/subTitle[@type="translated"]) | efrbroo:F1_Work, rdac:Work | rdaw:titleOfTheWork | rdfs:Literal | ap-internal |
@@ -291,29 +291,63 @@ depends on `//mods/genre`: {TODO list of relevant values}
 
 \* if the Expression Fragement is realised in an independent publication using its own persistent identifier
 
+**`general triples`**
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | | | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | | | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:workExpressed | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R3_realises | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | rdae:containerOfExpression | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression | efrbroo:R15_has_fragment | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | rdf:about | rdfs:Literal (URI: {Base-URI}/{//mods/relatedItem[@type="host"]/recordInfo/recordIdentifier}-WORK-{lfd. Nr. beginnend mit 0}) | * |
+
+**`ap-vivo`**
+
+    IF //mods/genre[@authority="local"] = "JournalArticle"|"ConferenceProceedings"|"BookEdited"
+
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title, " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:title | rdfs:Literal | ap-vivo | 1 | 1 | | title |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="abbreviated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="abbreviated"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | abbr_title |
+| concat(//mods/relatedItem[@type="host"]titleInfo/title[@type="translated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="translated"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | trans_title |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="uniform"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="uniform"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | uniform_title |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="alternative"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="alternative"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | alt_title
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="enumerated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="enumerated"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | enum_title
+| //mods/relatedItem[@type="host"]/language/languageTerm[@type="code" and @authority="iso639-2b"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Proceedings | dc:language | rdfs:Literal (ISO 639) | ap-vivo | 1 | 1 | lang | lang |
+| //mods/relatedItem[@type="host"]/identifier[@type="issn"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:identifier | rdfs:Literal | ap-vivo | 1 | 1 | | issn |
+| //mods/relatedItem[@type="host"]/identifier[@type="doi"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:identifier | rdfs:Literal | ap-vivo | 1 | 1 | | doi |
+| //mods/relatedItem[@type="host"]/originInfo/publisher | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:publisher | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | ap-vivo | | | | |
+
+ToDo:
+
+* Series
+* Editor
+* Conference?
+
+
+**`ap-internal`**
+
+| Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** //mods/relatedItem[@type="host"]/part/detail[@type="volume"] | efrbroo:F18_Serial_Work, rdac:Work, bibo:Journal | efrbroo:R10_has_member | efrbroo:F15_Complex_Work, rdac:Work, bibo:Volume | ap-internal |
+| //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** //mods/relatedItem[@type="host"]/part/detail[@type="volume"] | efrbroo:F15_Complex_Work, rdac:Work, bibo:Volume | | | ap-internal |
+| //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** //mods/relatedItem[@type="host"]/part/detail[@type="volume"] | efrbroo:F15_Complex_Work, rdac:Work, bibo:Volume | efrbroo:R10_has_member | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Issue | ap-internal |
+| //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** not(//mods/relatedItem[@type="host"]/part/detail[@type="volume"]) | efrbroo:F18_Serial_Work, rdac:Work, bibo:Journal | efrbroo:R10_has_member | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | | | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:workExpressed | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R3_realises | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:containerOfExpression | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R15_has_fragment | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | ap-internal |
 | //mods | efrbroo:F14_Individual_Work, rdac:Work | | | ap-internal |
-| //mods | efrbroo:F14_Individual_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods | efrbroo:F14_Individual_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | | | * |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | rdae:workExpressed | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | efrbroo:R3_realises | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods | efrbroo:F14_Individual_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | ap-internal |
+| //mods | efrbroo:F14_Individual_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | | | * |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | rdae:workExpressed | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | efrbroo:R3_realises | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
 
 Examples on GitHubGist: 
 * Uniform asymptotics for polynomials orthogonal with respect to a general class of discrete weights and universality results for associated ensembles / Baik, Jinho; Kriecherbauer, Thomas; McLaughlin, Kenneth T-R; Miller, Peter David ([Dataset in Ruhr-Universität Bochum, Research Bibliography & Repository](https://bibliographie.ub.rub.de/export/xml/mods?q=id%3Ae0007d60-6426-4273-bfca-561b87ca8036)): 
