@@ -166,7 +166,6 @@ depends on `//mods/genre`: {TODO list of relevant values}
 | concat(//mods/titleInfo/title[@type="translated"], " : ", //mods/titleInfo/subTitle[@type="translated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | trans_title |
 | concat(//mods/titleInfo/title[@type="uniform"], " : ", //mods/titleInfo/subTitle[@type="uniform"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | uniform_title |
 | concat(//mods/titleInfo/title[@type="alternative"], " : ", //mods/titleInfo/subTitle[@type="alternative"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | alt_title
-| concat(//mods/titleInfo/title[@type="enumerated"], " : ", //mods/titleInfo/subTitle[@type="enumerated"]) | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | enum_title
 | //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dc:language | rdfs:Literal (ISO 639) | ap-vivo | 1 | 1 | lang | lang |
 | //mods/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dct:abstract | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | ap-vivo | | | | |
 | //mods/subject[@authority="mesh"]/topic | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | dct:subject | skos:Concept | ap-vivo | | | | |
@@ -295,7 +294,37 @@ depends on `//mods/genre`: {TODO list of relevant values}
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | rdf:about | rdfs:Literal (URI: {Base-URI}/{//mods/relatedItem[@type="host"]/recordInfo/recordIdentifier}-WORK-{lfd. Nr. beginnend mit 0}) | * |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | | | * |
+| //mods/abstract | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | rdf:about | rdfs:Literal (URI) | * | | | | | 
+| //mods/abstract | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | schema:text | rdfs:Literal | * | 1 | 1 | | abstract |
+| //mods/abstract[@sharable="no"] | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document, schema:CreativeWork | schema:text | rdfs:Literal | * | 1 | 0 | | abstract |
+| //mods/subject[not(exists(@authority))"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/subject[not(exists(@authority))/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="mesh"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/subject[@authority="mesh"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="thesoz"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/subject[@authority="thesoz"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="stw"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/subject[@authority="stw"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/subject[@authority="lcsh"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/subject[@authority="lcsh"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | | | * |
+| //mods/relatedItem[@type="host"]/tableOfContents[@xlink:href] | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:DocumentPart | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/relatedItem[@type="host"]/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | rdf:about | rdfs:Literal (URI) | * | | | | | 
+| //mods/relatedItem[@type="host"]/abstract | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | schema:text | rdfs:Literal | * | 1 | 1 | | abstract |
+| //mods/relatedItem[@type="host"]/abstract[@sharable="no"] | cerif:cfResPubl, efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | schema:text | rdfs:Literal | * | 1 | 0 | | abstract |
+| //mods/relatedItem[@type="host"]/subject[not(exists(@authority))"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/relatedItem[@type="host"]/subject[not(exists(@authority))/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/relatedItem[@type="host"]/subject[@authority="mesh"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/relatedItem[@type="host"]/subject[@authority="mesh"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/relatedItem[@type="host"]/subject[@authority="thesoz"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/relatedItem[@type="host"]/subject[@authority="thesoz"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/relatedItem[@type="host"]/subject[@authority="stw"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/relatedItem[@type="host"]/subject[@authority="stw"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/relatedItem[@type="host"]/subject[@authority="lcsh"]/topic | skos:Concept | rdf:about | rdfs:Literal (URI) | * | | | | |
+| //mods/relatedItem[@type="host"]/subject[@authority="lcsh"]/topic | skos:Concept | skos:prefLabel | rdfs:Literal | * | 1 | 1 | fsubject | subject |
+| //mods/relatedItem[@type="host"]/originInfo/publisher | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | rdf:about | rdfs:Literal (URI) | * | | | | |
+
 
 **`ap-vivo`**
 
@@ -303,16 +332,24 @@ depends on `//mods/genre`: {TODO list of relevant values}
 
 | Source | Target Entities | Target Property | Target Value Type | Application Profile | Search | Display | Facet | Index |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| concat(//mods/relatedItem[@type="host"]/titleInfo/title, " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:title | rdfs:Literal | ap-vivo | 1 | 1 | | title |
-| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="abbreviated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="abbreviated"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | abbr_title |
-| concat(//mods/relatedItem[@type="host"]titleInfo/title[@type="translated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="translated"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | trans_title |
-| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="uniform"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="uniform"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | uniform_title |
-| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="alternative"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="alternative"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | alt_title
-| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="enumerated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="enumerated"]) | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | enum_title
-| //mods/relatedItem[@type="host"]/language/languageTerm[@type="code" and @authority="iso639-2b"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Proceedings | dc:language | rdfs:Literal (ISO 639) | ap-vivo | 1 | 1 | lang | lang |
-| //mods/relatedItem[@type="host"]/identifier[@type="issn"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:identifier | rdfs:Literal | ap-vivo | 1 | 1 | | issn |
-| //mods/relatedItem[@type="host"]/identifier[@type="doi"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:identifier | rdfs:Literal | ap-vivo | 1 | 1 | | doi |
-| //mods/relatedItem[@type="host"]/originInfo/publisher | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | dct:publisher | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | ap-vivo | | | | |
+| concat(//mods/titleInfo/title, " : ", //mods/titleInfo/subTitle) | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:title | rdfs:Literal | ap-vivo | 1 | 1 | | title |
+| concat(//mods/titleInfo/title[@type="abbreviated"], " : ", //mods/titleInfo/subTitle[@type="abbreviated"]) | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | abbr_title |
+| concat(//mods/titleInfo/title[@type="translated"], " : ", //mods/titleInfo/subTitle[@type="translated"]) | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | trans_title |
+| concat(//mods/titleInfo/title[@type="uniform"], " : ", //mods/titleInfo/subTitle[@type="uniform"]) | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 1 | | uniform_title |
+| concat(//mods/titleInfo/title[@type="alternative"], " : ", //mods/titleInfo/subTitle[@type="alternative"]) | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | alt_title
+| //mods/language/languageTerm[@type="code" and @authority="iso639-2b"] | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dc:language | rdfs:Literal (ISO 639) | ap-vivo | 1 | 1 | lang | lang |
+| //mods/abstract | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:abstract | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document, schema:CreativeWork | ap-vivo | | | | |
+| //mods/subject[@authority="mesh"]/topic | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:subject | skos:Concept | ap-vivo | | | | |
+| //mods/subject[@authority="thesoz"]/topic | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:subject | skos:Concept | ap-vivo | | | | |
+| //mods/subject[@authority="stw"]/topic | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:subject | skos:Concept | ap-vivo | | | | |
+| //mods/subject[@authority="lcsh"]/topic | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | dct:subject | skos:Concept | ap-vivo | | | | |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title, " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle) | efrbroo:efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | dct:title | rdfs:Literal | ap-vivo | 1 | 1 | | title |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="abbreviated"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="abbreviated"]) | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | bibo:shortTitle | rdfs:Literal | ap-vivo | 1 | 1 | | abbr_title |
+| concat(//mods/relatedItem[@type="host"]/titleInfo/title[@type="alternative"], " : ", //mods/relatedItem[@type="host"]/titleInfo/subTitle[@type="alternative"]) | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | dct:alternative | rdfs:Literal | ap-vivo | 1 | 0 | | alt_title
+| //mods/relatedItem[@type="host"]/language/languageTerm[@type="code" and @authority="iso639-2b"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | dc:language | rdfs:Literal (ISO 639) | ap-vivo | 1 | 1 | lang | lang |
+| //mods/relatedItem[@type="host"]/identifier[@type="issn"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | dct:identifier | rdfs:Literal | ap-vivo | 1 | 1 | | issn |
+| //mods/relatedItem[@type="host"]/identifier[@type="doi"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | dct:identifier | rdfs:Literal | ap-vivo | 1 | 1 | | doi |
+| //mods/relatedItem[@type="host"]/originInfo/publisher | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | dct:publisher | foaf:Organization, cerif:cfOrgUnit, schema:Organization, efrbroo:F11_Corporate_Body, prov:Organization | ap-vivo | | | | |
 
 ToDo:
 
@@ -328,26 +365,25 @@ ToDo:
 | //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** //mods/relatedItem[@type="host"]/part/detail[@type="volume"] | efrbroo:F18_Serial_Work, rdac:Work, bibo:Journal | efrbroo:R10_has_member | efrbroo:F15_Complex_Work, rdac:Work, bibo:Volume | ap-internal |
 | //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** //mods/relatedItem[@type="host"]/part/detail[@type="volume"] | efrbroo:F15_Complex_Work, rdac:Work, bibo:Volume | | | ap-internal |
 | //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** //mods/relatedItem[@type="host"]/part/detail[@type="volume"] | efrbroo:F15_Complex_Work, rdac:Work, bibo:Volume | efrbroo:R10_has_member | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Issue | ap-internal |
-| //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** not(//mods/relatedItem[@type="host"]/part/detail[@type="volume"]) | efrbroo:F18_Serial_Work, rdac:Work, bibo:Journal | efrbroo:R10_has_member | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | | | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:workExpressed | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R3_realises | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | rdae:containerOfExpression | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
-| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | efrbroo:R15_has_fragment | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] **AND** //mods/genre[@authority="local"] = "JournalArticle" **AND** not(//mods/relatedItem[@type="host"]/part/detail[@type="volume"]) | efrbroo:F18_Serial_Work, rdac:Work, bibo:Journal | efrbroo:R10_has_member | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Issue | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:CollectedDocument | rdf:about | rdfs:Literal (URI: {Base-URI}/{//mods/relatedItem[@type="host"]/recordInfo/recordIdentifier}-WORK-{lfd. Nr. beginnend mit 0}) | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Issue | efrbroo:R3_is_realised_in | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F17_Aggregation_Work, rdac:Work, bibo:Issue | rdaw:expressionOfWork | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | rdae:workExpressed | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | efrbroo:R3_realises | efrbroo:F17_Aggregation_Work, rdac:Work | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | rdae:manifestationOfExpression | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | efrbroo:R4_carriers_provided_by | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | rdae:containerOfExpression | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
+| //mods/relatedItem[@type="host"] | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | efrbroo:R15_has_fragment | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | | | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | rdam:expressionManifested | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | ap-internal |
 | //mods/relatedItem[@type="host"] | efrbroo:F3_Manifestation_Product_Type, rdac:Manifestation | efrbroo:R4_comprises_carriers_of | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:Document | ap-internal |
 | //mods | efrbroo:F14_Individual_Work, rdac:Work | | | ap-internal |
 | //mods | efrbroo:F14_Individual_Work, rdac:Work | efrbroo:R3_is_realised_in | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | ap-internal |
 | //mods | efrbroo:F14_Individual_Work, rdac:Work | rdaw:expressionOfWork | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | | | * |
 | //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | rdae:workExpressed | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
 | //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | efrbroo:R3_realises | efrbroo:F14_Individual_Work, rdac:Work | ap-internal |
-| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression | ap-internal |
+| //mods | cerif:cfResPubl, efrbroo:F23_Expression_Fragment, rdac:Expression, bibo:Document | rdae:containedInExpression | efrbroo:F22_Self-Contained_Expression, rdac:Expression, bibo:CollectedDocument | ap-internal |
 
 Examples on GitHubGist: 
 * Uniform asymptotics for polynomials orthogonal with respect to a general class of discrete weights and universality results for associated ensembles / Baik, Jinho; Kriecherbauer, Thomas; McLaughlin, Kenneth T-R; Miller, Peter David ([Dataset in Ruhr-Universität Bochum, Research Bibliography & Repository](https://bibliographie.ub.rub.de/export/xml/mods?q=id%3Ae0007d60-6426-4273-bfca-561b87ca8036)): 
