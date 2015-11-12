@@ -1,0 +1,727 @@
+
+<http://data.uaruhr.de/resource/conceptscheme:document_types> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/title> "document_types"@de ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:06:31.317+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.uaruhr.de/resource/conceptscheme:document_types> .
+
+<http://data.uaruhr.de/resource/conceptscheme:document_types> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:08:04.621+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Dependent Publication"@de .
+
+<http://data.uaruhr.de/resource/concept:event> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.uaruhr.de/resource/conceptscheme:document_types> .
+
+<http://data.uaruhr.de/resource/conceptscheme:document_types> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://data.uaruhr.de/resource/concept:event> .
+
+<http://data.uaruhr.de/resource/concept:event> <http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:08:30.517+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Event"@de .
+
+	
+	
+<http://data.uaruhr.de/resource/concept:patent> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.uaruhr.de/resource/conceptscheme:document_types> .
+
+<http://data.uaruhr.de/resource/conceptscheme:document_types> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://data.uaruhr.de/resource/concept:patent> .
+
+<http://data.uaruhr.de/resource/concept:patent> <http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:08:42.997+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Patent"@de .
+
+	
+	
+<http://data.uaruhr.de/resource/concept:independent_publication> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.uaruhr.de/resource/conceptscheme:document_types> .
+
+<http://data.uaruhr.de/resource/conceptscheme:document_types> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:08:44.760+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Independent Publication"@de .
+
+<http://data.uaruhr.de/resource/concept:product> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.uaruhr.de/resource/conceptscheme:document_types> .
+
+<http://data.uaruhr.de/resource/conceptscheme:document_types> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://data.uaruhr.de/resource/concept:product> .
+
+<http://data.uaruhr.de/resource/concept:product> <http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:10:37.064+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Product"@de .
+
+<http://data.uaruhr.de/resource/concept:abstract> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:abstract> .
+
+<http://data.uaruhr.de/resource/concept:abstract> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:10:58.592+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Abstract"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor (Compilation), Title (Compilation), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_legal_commentary> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:contribution_in_legal_commentary> .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_legal_commentary> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:15:36.990+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Beitrag in Gesetzeskommentar"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Commentator for written text, Sections, Title (Commentary), Editor (Commentary), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:bachelor_thesis> .
+
+<http://data.uaruhr.de/resource/concept:doctoral_thesis> <http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:doctoral_thesis> .
+
+<http://data.uaruhr.de/resource/concept:bachelor_thesis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:51:44.461+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Bachelorarbeit"@de .
+
+<http://data.uaruhr.de/resource/concept:doctoral_thesis> <http://www.w3.org/2004/02/skos/core#note> "Author, Academic Advisor, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_conference> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:contribution_in_conference> .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_conference> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:49:21.087+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Beitrag in Tagungsband"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor (Proceedings), Title (Proceedings), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_compilation> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:contribution_in_compilation> .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_compilation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:50:19.784+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Beitrag in Sammelwerk"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor (Compilation), Title (Compilation), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:letter_to_editor> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:letter_to_editor> .
+
+<http://data.uaruhr.de/resource/concept:letter_to_editor> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:50:36.414+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Letter to Editor"@de .
+
+<http://data.uaruhr.de/resource/concept:dramatic_work> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:event> .
+
+<http://data.uaruhr.de/resource/concept:event> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:dramatic_work> .
+
+<http://data.uaruhr.de/resource/concept:dramatic_work> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:51:05.211+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Buehnenwerk"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Speaker/Actor, Stage director, Title, Year of production"@en .
+
+<http://data.uaruhr.de/resource/concept:database> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:product> .
+
+<http://data.uaruhr.de/resource/concept:product> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:database> .
+
+<http://data.uaruhr.de/resource/concept:database> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:51:29.734+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Datenbank"@de .
+
+<http://data.uaruhr.de/resource/concept:bachelor_thesis> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:doctoral_thesis> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:doctoral_thesis> .
+
+<http://data.uaruhr.de/resource/concept:doctoral_thesis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:52:25.193+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Dissertation"@de .
+
+<http://data.uaruhr.de/resource/concept:bachelor_thesis> <http://www.w3.org/2004/02/skos/core#note> "Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:diploma_thesis> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:diploma_thesis> .
+
+<http://data.uaruhr.de/resource/concept:diploma_thesis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:55:18.197+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Diplomarbeit"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:collected_work> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:collected_work> .
+
+<http://data.uaruhr.de/resource/concept:collected_work> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:56:36.993+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Edition"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:festschrift> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:festschrift> .
+
+<http://data.uaruhr.de/resource/concept:festschrift> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:57:05.572+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Festschrift"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Editor, Title, Honoree, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:reseach_data> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:product> .
+
+<http://data.uaruhr.de/resource/concept:product> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:reseach_data> .
+
+<http://data.uaruhr.de/resource/concept:reseach_data> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:57:33.605+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Forschungsdaten"@de .
+
+<http://data.uaruhr.de/resource/concept:legal_commentary> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:legal_commentary> .
+
+<http://data.uaruhr.de/resource/concept:legal_commentary> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:57:52.356+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Gesetzeskommentar"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Editor, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:expert_report> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:expert_report> .
+
+<http://data.uaruhr.de/resource/concept:expert_report> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:58:25.912+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Gutachten"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:habilitation> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:habilitation> .
+
+<http://data.uaruhr.de/resource/concept:habilitation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:58:58.750+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Habilitation"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:thesis> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:thesis> .
+
+<http://data.uaruhr.de/resource/concept:thesis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:59:20.450+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Hochschulschrift"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Academic Advisor, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:internet_document> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:internet_document> .
+
+<http://data.uaruhr.de/resource/concept:internet_document> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T09:59:41.510+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Internetdokument"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication, Online address"@en .
+
+<http://data.uaruhr.de/resource/concept:interview> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:event> .
+
+<http://data.uaruhr.de/resource/concept:event> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:interview> .
+
+<http://data.uaruhr.de/resource/concept:interview> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:00:01.525+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Interview"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Interviewer, Interviewee, Title/Topic, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:letter_to_editor> <http://www.w3.org/2004/02/skos/core#note> "Author, Title, Periodical,(published: Volume, Page range), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:entry_in_encyclopedia> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:entry_in_encyclopedia> .
+
+<http://data.uaruhr.de/resource/concept:entry_in_encyclopedia> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:01:01.444+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Lexikonartikel"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor (Encyclopedia), Title (Encyclopedia), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:magisters_thesis> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:magisters_thesis> .
+
+<http://data.uaruhr.de/resource/concept:magisters_thesis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:01:22.535+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Magisterarbeit"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:masters_thesis> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:masters_thesis> .
+
+<http://data.uaruhr.de/resource/concept:masters_thesis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:01:40.476+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Masterarbeit"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:meeting_abstract> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:meeting_abstract> .
+
+<http://data.uaruhr.de/resource/concept:meeting_abstract> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:02:07.074+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Meeting Abstract"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor (Compilation), Title (Compilation), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:book> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:book> .
+
+<http://data.uaruhr.de/resource/concept:book> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:02:37.119+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Monographie"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:printed_music_publication> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:printed_music_publication> .
+
+<http://data.uaruhr.de/resource/concept:printed_music_publication> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:02:57.056+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Musikdruck"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:afterword> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:afterword> .
+
+<http://data.uaruhr.de/resource/concept:afterword> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:03:16.962+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Nachwort"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author of afterword, Title, Editor / Author (Book, Compilation ...), Title (Book, Compilation ...), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:standard> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:standard> .
+
+<http://data.uaruhr.de/resource/concept:standard> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:03:32.733+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Norm"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Standards body, Title, Date of Publication"@en .
+
+	
+	
+<http://data.uaruhr.de/resource/concept:patentschrift> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:patent> .
+
+<http://data.uaruhr.de/resource/concept:patent> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:patentschrift> .
+
+
+
+<http://data.uaruhr.de/resource/concept:patentschrift> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:03:51.453+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Patentschrift"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Inventor, Title, Patent number, Issue year"@en .
+
+<http://data.uaruhr.de/resource/concept:poster> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:poster> .
+
+<http://data.uaruhr.de/resource/concept:poster> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:04:12.045+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Poster"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Institution (Meeting), Publication Date"@en .
+
+<http://data.uaruhr.de/resource/concept:poster_abstract> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:poster_abstract> .
+
+<http://data.uaruhr.de/resource/concept:poster_abstract> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:04:32.903+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Poster Abstract"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Editor (Compilation), Title (Compilation), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:sermon> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:sermon> .
+
+<http://data.uaruhr.de/resource/concept:sermon> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:05:03.697+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Predigt"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Title (Compilation, Journal ...), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:press_release> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:press_release> .
+
+<http://data.uaruhr.de/resource/concept:press_release> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:05:21.653+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Pressemitteilung"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Organization, Title, Date of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:radio_tv_programm> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:event> .
+
+<http://data.uaruhr.de/resource/concept:event> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:radio_tv_programm> .
+
+<http://data.uaruhr.de/resource/concept:radio_tv_programm> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:06:37.250+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Radio/TV Programm"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Writer, Title, Station, Broadcast date"@en .
+
+<http://data.uaruhr.de/resource/concept:report> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:report> .
+
+<http://data.uaruhr.de/resource/concept:report> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:07:02.741+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Report"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:review> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:review> .
+
+<http://data.uaruhr.de/resource/concept:review> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:07:28.231+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Rezension"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Author/Editor (reviewed book), Title (reviewed book), Year of Publication (reviewed book), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:compilation> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:compilation> .
+
+<http://data.uaruhr.de/resource/concept:compilation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:07:54.034+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Sammelwerk"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Editor, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:series> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:series> .
+
+<http://data.uaruhr.de/resource/concept:series> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:08:18.744+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Schriftenreihe"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Editor; Title; in Relation to Editorship: First and last year of publication"@en .
+
+<http://data.uaruhr.de/resource/concept:software> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:product> .
+
+<http://data.uaruhr.de/resource/concept:product> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:software> .
+
+<http://data.uaruhr.de/resource/concept:software> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:08:40.522+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Software"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Developer, Program name, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:special_issue> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:special_issue> .
+
+<http://data.uaruhr.de/resource/concept:special_issue> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:09:03.423+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Sonderheft"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "(Editor), Title, Periodical, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:other> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:other> .
+
+<http://data.uaruhr.de/resource/concept:other> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:09:24.514+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Sonstiges"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:state_examination> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:state_examination> .
+
+<http://data.uaruhr.de/resource/concept:state_examination> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:09:43.562+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Staatsexamenarbeit"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:proceedings> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:proceedings> .
+
+<http://data.uaruhr.de/resource/concept:proceedings> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:10:06.899+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Tagungsband"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Editor, Title, Conference name, Conference location, Conference dates, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:test> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:product> .
+
+<http://data.uaruhr.de/resource/concept:product> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:test> .
+
+<http://data.uaruhr.de/resource/concept:test> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:10:28.880+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Test"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:audio_or_video_document> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:product> .
+
+<http://data.uaruhr.de/resource/concept:product> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:audio_or_video_document> .
+
+<http://data.uaruhr.de/resource/concept:audio_or_video_document> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:10:45.712+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Ton- und Filmdokument"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Storage medium, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:lecture_notes> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:lecture_notes> .
+
+<http://data.uaruhr.de/resource/concept:lecture_notes> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:11:13.168+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Vorlesungsskript"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Lecture, Academic Institution, Institute, Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:lecture> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:event> .
+
+<http://data.uaruhr.de/resource/concept:event> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:lecture> .
+
+<http://data.uaruhr.de/resource/concept:lecture> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:11:41.061+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Vortrag"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Lecturer, Title, Date, Place, Institution (Organization)"@en .
+
+<http://data.uaruhr.de/resource/concept:preface> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:preface> .
+
+<http://data.uaruhr.de/resource/concept:preface> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:11:58.252+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Vorwort"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author of introduction, Title, Editor / Author (Book, Compilation ...), Title (Book, Compilation ...), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:website> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:website> .
+
+<http://data.uaruhr.de/resource/concept:website> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:12:19.297+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Website"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Online address"@en .
+
+<http://data.uaruhr.de/resource/concept:journal> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:independent_publication> .
+
+<http://data.uaruhr.de/resource/concept:independent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:journal> .
+
+<http://data.uaruhr.de/resource/concept:journal> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:12:53.882+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Zeitschrift"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Editor; Title; in Relation to Editorship: First and last year of publication"@en .
+
+<http://data.uaruhr.de/resource/concept:journal_article> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:journal_article> .
+
+<http://data.uaruhr.de/resource/concept:journal_article> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:13:15.207+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Zeitschriftenaufsatz"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Periodical,(published: Volume, Page range), Year of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:newspaperl_article> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#broader> <http://data.uaruhr.de/resource/concept:dependent_publication> .
+
+<http://data.uaruhr.de/resource/concept:dependent_publication> <http://www.w3.org/2004/02/skos/core#narrower> <http://data.uaruhr.de/resource/concept:newspaperl_article> .
+
+<http://data.uaruhr.de/resource/concept:newspaperl_article> <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.uaruhr.de/resource/conceptscheme:document_types> ;
+	<http://purl.org/dc/elements/1.1/creator> "ubmit" ;
+	<http://purl.org/dc/terms/created> "2015-10-29T10:13:36.688+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Zeitungsartikel"@de ;
+	<http://www.w3.org/2004/02/skos/core#note> "Author, Title, Newspaper, Date of Publication"@en .
+
+<http://data.uaruhr.de/resource/concept:audio_or_video_document> <http://www.w3.org/2004/02/skos/core#prefLabel> "Audio or video document"@en .
+
+<http://data.uaruhr.de/resource/concept:reseach_data> <http://www.w3.org/2004/02/skos/core#prefLabel> "Research data"@en .
+
+<http://data.uaruhr.de/resource/concept:database> <http://www.w3.org/2004/02/skos/core#prefLabel> "Database"@en .
+
+<http://data.uaruhr.de/resource/concept:patentschrift> <http://www.w3.org/2004/02/skos/core#prefLabel> "Patent"@en .
+
+<http://data.uaruhr.de/resource/concept:journal> <http://www.w3.org/2004/02/skos/core#prefLabel> "Journal"@en .
+
+<http://data.uaruhr.de/resource/concept:lecture_notes> <http://www.w3.org/2004/02/skos/core#prefLabel> "Lecture notes"@en .
+
+<http://data.uaruhr.de/resource/concept:proceedings> <http://www.w3.org/2004/02/skos/core#prefLabel> "Proceedings"@en .
+
+<http://data.uaruhr.de/resource/concept:state_examination> <http://www.w3.org/2004/02/skos/core#prefLabel> "State examination"@en .
+
+<http://data.uaruhr.de/resource/concept:other> <http://www.w3.org/2004/02/skos/core#prefLabel> "Other"@en .
+
+<http://data.uaruhr.de/resource/concept:series> <http://www.w3.org/2004/02/skos/core#prefLabel> "Series"@en .
+
+<http://data.uaruhr.de/resource/concept:compilation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Compilation"@en .
+
+<http://data.uaruhr.de/resource/concept:report> <http://www.w3.org/2004/02/skos/core#prefLabel> "Report"@en .
+
+<http://data.uaruhr.de/resource/concept:website> <http://www.w3.org/2004/02/skos/core#prefLabel> "Website"@en .
+
+<http://data.uaruhr.de/resource/concept:abstract> <http://www.w3.org/2004/02/skos/core#prefLabel> "Abstract"@en .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_legal_commentary> <http://www.w3.org/2004/02/skos/core#prefLabel> "Contribution in legal commentary"@en .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_compilation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Contribution in compilation"@en .
+
+<http://data.uaruhr.de/resource/concept:contribution_in_conference> <http://www.w3.org/2004/02/skos/core#prefLabel> "Contribution in conference"@en .
+
+<http://data.uaruhr.de/resource/concept:letter_to_editor> <http://www.w3.org/2004/02/skos/core#prefLabel> "Letter to editor"@en .
+
+<http://data.uaruhr.de/resource/concept:entry_in_encyclopedia> <http://www.w3.org/2004/02/skos/core#prefLabel> "Entry in encylocpedia"@en .
+
+<http://data.uaruhr.de/resource/concept:meeting_abstract> <http://www.w3.org/2004/02/skos/core#prefLabel> "Meeting abstract"@en .
+
+<http://data.uaruhr.de/resource/concept:afterword> <http://www.w3.org/2004/02/skos/core#prefLabel> "Afterword"@en .
+
+<http://data.uaruhr.de/resource/concept:poster_abstract> <http://www.w3.org/2004/02/skos/core#prefLabel> "Poster abstract"@en .
+
+<http://data.uaruhr.de/resource/concept:review> <http://www.w3.org/2004/02/skos/core#prefLabel> "Review"@en .
+
+<http://data.uaruhr.de/resource/concept:special_issue> <http://www.w3.org/2004/02/skos/core#prefLabel> "Special issue"@en .
+
+<http://data.uaruhr.de/resource/concept:preface> <http://www.w3.org/2004/02/skos/core#prefLabel> "Preface"@en .
+
+<http://data.uaruhr.de/resource/concept:journal_article> <http://www.w3.org/2004/02/skos/core#prefLabel> "Journal article"@en .
+
+<http://data.uaruhr.de/resource/concept:newspaperl_article> <http://www.w3.org/2004/02/skos/core#prefLabel> "Newspaper article"@en .
+
+<http://data.uaruhr.de/resource/concept:dramatic_work> <http://www.w3.org/2004/02/skos/core#prefLabel> "Dramatic work"@en .
+
+<http://data.uaruhr.de/resource/concept:interview> <http://www.w3.org/2004/02/skos/core#prefLabel> "Interview"@en .
+
+<http://data.uaruhr.de/resource/concept:radio_tv_programm> <http://www.w3.org/2004/02/skos/core#prefLabel> "Radio/TV-Programm"@en .
+
+<http://data.uaruhr.de/resource/concept:lecture> <http://www.w3.org/2004/02/skos/core#prefLabel> "Lecture"@en .
+
+<http://data.uaruhr.de/resource/concept:bachelor_thesis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Bachelor thesis"@en .
+
+<http://data.uaruhr.de/resource/concept:diploma_thesis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Diploma thesis"@en .
+
+<http://data.uaruhr.de/resource/concept:doctoral_thesis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Doctoral thesis"@en .
+
+<http://data.uaruhr.de/resource/concept:collected_work> <http://www.w3.org/2004/02/skos/core#prefLabel> "Collected work"@en .
+
+<http://data.uaruhr.de/resource/concept:festschrift> <http://www.w3.org/2004/02/skos/core#prefLabel> "Festschrift"@en .
+
+<http://data.uaruhr.de/resource/concept:legal_commentary> <http://www.w3.org/2004/02/skos/core#prefLabel> "Legal commentary"@en .
+
+<http://data.uaruhr.de/resource/concept:expert_report> <http://www.w3.org/2004/02/skos/core#prefLabel> "Expert report"@en .
+
+<http://data.uaruhr.de/resource/concept:habilitation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Habilitation"@en .
+
+<http://data.uaruhr.de/resource/concept:thesis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Thesis"@en .
+
+<http://data.uaruhr.de/resource/concept:internet_document> <http://www.w3.org/2004/02/skos/core#prefLabel> "Internet document"@en .
+
+<http://data.uaruhr.de/resource/concept:masters_thesis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Master´s thesis"@en .
+
+<http://data.uaruhr.de/resource/concept:magisters_thesis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Master´s thesis"@en .
+
+<http://data.uaruhr.de/resource/concept:book> <http://www.w3.org/2004/02/skos/core#prefLabel> "Book"@en .
+
+<http://data.uaruhr.de/resource/concept:printed_music_publication> <http://www.w3.org/2004/02/skos/core#prefLabel> "Printed music publication"@en .
+
+<http://data.uaruhr.de/resource/concept:standard> <http://www.w3.org/2004/02/skos/core#prefLabel> "Standard"@en .
+
+<http://data.uaruhr.de/resource/concept:poster> <http://www.w3.org/2004/02/skos/core#prefLabel> "Poster"@en .
+
+<http://data.uaruhr.de/resource/concept:sermon> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sermon"@en .
+
+<http://data.uaruhr.de/resource/concept:press_release> <http://www.w3.org/2004/02/skos/core#prefLabel> "Press release"@en .
