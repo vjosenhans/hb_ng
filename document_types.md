@@ -4,11 +4,11 @@ Vgl. auch https://bibliographie.ub.rub.de/pad/p/publikationstypen
 
 | Document Type|Translation|Entity Type|Mandatory Fields|
 |---|---|---|---|
-|Abstract|Abstract|Dependent Publication|Author, Title, Editor (Compilation), Title (Compilation), Year of Publication|	
-|Bachelorarbeit|Bachelor Thesis|Independent Publication|Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication|
-|Beitrag in Gesetzeskommentar|Contribution in Legal Commentary|Dependent Publication|Commentator for written text, Sections, Title (Commentary), Editor (Commentary), Year of Publication|	
-|Beitrag in Sammelwerk|Contribution in Compilation|Dependent Publication|Author, Title, Editor (Compilation), Title (Compilation), Year of Publication|
-|Beitrag in Tagungsband|Contribution in Conference Proceedings|Dependent Publication|Author, Title, Editor (Proceedings), Title (Proceedings), Year of Publication|
+|Abstract|Abstract|Dependent Publication|Title, Title (Compilation), Year of Publication|	
+|Bachelorarbeit|Bachelor Thesis|Independent Publication|Title, Year of Publication|
+|Beitrag in Gesetzeskommentar|Contribution in Legal Commentary|Dependent Publication|Title (Commentary), Year of Publication|	
+|Beitrag in Sammelwerk|Contribution in Compilation|Dependent Publication|Title, Title (Compilation), Year of Publication|
+|Beitrag in Tagungsband|Contribution in Conference Proceedings|Dependent Publication|Title, Title (Proceedings), Year of Publication|
 |Buehnenwerk|Dramatic Work|Event|Author, Speaker/Actor, Stage director, Title, Year of production|	
 |Datenbank|Database|Product|	
 |Diplomarbeit|Diploma Thesis|Independent Publication|Author, Title, Academic Advisor, Academic Institution, Institute, Year of Publication|	
